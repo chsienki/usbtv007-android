@@ -18,7 +18,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.Surface;
 
 import java.nio.ByteBuffer;
@@ -427,6 +427,12 @@ public class UsbTv extends Handler {
     public static void deviceDetached(UsbDevice device) {
         Timber.v("USB Device Detached");
         //TODO:
+
+        for (UsbTv usbtv : mReferenceList) {
+            if (device.equals(usbtv.mUsbtvDevice)) {
+                usbtv.mDriverCallbacks.onClose(); //TODO: make this better.
+            }
+        }
     }
 
     public static void deviceAttached(UsbDevice device) {
