@@ -51,9 +51,9 @@ public:
 		_fidFrameWidth = env->GetFieldID(paramsCls, "mFrameWidth", "I");
 		_fidFrameHeight = env->GetFieldID(paramsCls, "mFrameHeight", "I");
 		_fidFrameSizeInBytes = env->GetFieldID(paramsCls, "mFrameSizeBytes", "I");
-		_fidNorm = env->GetFieldID(paramsCls, "mNorm", "com/arksine/libusbtv/UsbTv$TvNorm");
-		_fidScanType = env->GetFieldID(paramsCls, "mScanType", "com/arksine/libusbtv/UsbTv$ScanType");
-		_fidInputSelection = env->GetFieldID(paramsCls, "mInput", "com/arksine/libusbtv/UsbTv$InputSelection");
+		_fidNorm = env->GetFieldID(paramsCls, "mNorm", "Lcom/arksine/libusbtv/UsbTv$TvNorm;");
+		_fidScanType = env->GetFieldID(paramsCls, "mScanType", "Lcom/arksine/libusbtv/UsbTv$ScanType;");
+		_fidInputSelection = env->GetFieldID(paramsCls, "mInput", "Lcom/arksine/libusbtv/UsbTv$InputSelection;");
 
 		_midNormOrdinal = env->GetMethodID(normCls, "ordinal", "()I");
 		_midScanTypeOrdinal = env->GetMethodID(scanTypeCls, "ordinal", "()I");
